@@ -26,7 +26,7 @@ func Index(w http.ResponseWriter, r *http.Request) {
 	hasMoreRecords := total > nextOffset // Determine if more employees exist beyond the current page.
 
 	// Fetch the employees for the current page.
-	employees := getEmployees(offset, limit)
+	employees := employees(offset, limit)
 
 	rw.Set("employees", employees)
 	rw.Set("hasMoreRecords", hasMoreRecords)
